@@ -1,5 +1,13 @@
+%offcanvas-css-vars {
+    --offcanvas-color: #ffffff;
+    --offcanvas-bg: #ff0000;
+}
+
 
 $body-bg: #ffffff;
 $primary: #0A1E3F;
+$offcanvas-bg: #e5d6d67a;
+$offcanvas-padding-y: 10px;
+
 
 @import '~bootstrap/scss/bootstrap.scss';
