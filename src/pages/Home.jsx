@@ -8,6 +8,19 @@ export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState('default');
 
+
+  const data = [
+    {
+      heading: 'Trans ',
+      description: 'fgkjfdh jldfsh ',
+      image: 'assets/img/services.jpg'
+    },
+    {
+      heading: 'Trans ',
+      description: 'fgkjfdh jldfsh ',
+      image: 'assets/img/services.jpg'
+    },
+  ]
   useEffect(() => {
     const mouseMove = (e) => {
       setMousePosition({
@@ -62,7 +75,9 @@ export default function Home() {
       <div onMouseEnter={textEnter} onMouseLeave={textLeave}>
         <NavigationBar />
         <Hero />
-        <Services position={true} image={'assets/img/services.jpg'} heading={'Luxury Tran'} text={'dhfviy hvbh'} />
+        {
+          data.map((item, index) => <Services position={index % 2 === 0 ? true : false} text={item.description} heading={item.heading} image={item.image} />)
+        }
       </div>
     </div>
   );

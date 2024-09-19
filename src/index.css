@@ -1,8 +1,24 @@
-:root{
-    --bs-body-bg:#e5d6d67a;
+:root {
+    --bs-body-bg: #e5d6d67a;
 }
 
 
-.logo{
+.logo {
     width: 40px;
+}
+
+#hero {
+    background-image: url(../public/assets/img/services.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-transparent-cutom {
+    background-color: rgba(0, 0, 0, 0.153);
+}
+
+.bg-white-custom {
+    background-color: rgba(0, 0, 0, 0.558);
+    backdrop-filter: blur(5px);
 }
