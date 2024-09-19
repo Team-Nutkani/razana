@@ -1,0 +1,10 @@
+#hero {
+    background-image: url(../public/assets/img/services.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-transparent-cutom{
+    background-color: rgba(0, 0, 0, 0.153);
+}
