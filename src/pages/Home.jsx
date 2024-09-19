@@ -38,8 +38,8 @@ export default function Home() {
 
   const variants = {
     default: {
-      x: mousePosition.x - 16,
-      y: mousePosition.y - 16,
+      x: mousePosition.x - 8,
+      y: mousePosition.y - 8,
       height: 10,
       width: 10,
     },
@@ -48,7 +48,7 @@ export default function Home() {
       width: 64,
       x: mousePosition.x - 32,
       y: mousePosition.y - 32,
-      backgroundColor: 'rgba(255, 255, 255, 0.5)',
+      backgroundColor: 'transparent',
       mixBlendMode: 'difference',
     },
   };

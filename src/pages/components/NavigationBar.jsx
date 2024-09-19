@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Navbar, Container, Nav, Offcanvas } from 'react-bootstrap';
 import { Search } from 'lucide-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 
 export default function NavigationBar() {
   const [scrolled, setScrolled] = useState(false);
@@ -44,10 +45,10 @@ export default function NavigationBar() {
         placement="start"
         className="bg-white-custom"
       >
-        <Offcanvas.Header closeButton>
+        <Offcanvas.Header className='text-white py-4' closeButton>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <Nav className="flex-column">
+          <Nav className="flex-column text-white text-end pe-5">
             {['Home', 'Services', 'About', 'Contact'].map((item, index) => (
               <motion.div
                 key={item}
@@ -55,7 +56,7 @@ export default function NavigationBar() {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Nav.Link href={`#${item.toLowerCase()}`}>{item}</Nav.Link>
+                <Link to={`#${item.toLowerCase()}`} className='text-white fs-3 text-decoration-none mb-4'>{item}</Link>
               </motion.div>
             ))}
           </Nav>
