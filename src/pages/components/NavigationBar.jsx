@@ -25,7 +25,6 @@ export default function NavigationBar() {
         style={{ transition: 'background-color 0.3s ease' }}
       >
         <Container className="border-bottom border-white pb-3">
-          <Navbar.Toggle aria-controls="offcanvas-nav" />
           <label className="text-white d-flex align-items-center gap-2" onClick={() => setShowOffcanvas(true)}>
             <i className="bi bi-list fs-3"></i> Menu
           </label>
@@ -43,10 +42,9 @@ export default function NavigationBar() {
         show={showOffcanvas}
         onHide={() => setShowOffcanvas(false)}
         placement="start"
-        style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', boxShadow: '0 0 15px rgba(0,0,0,0.1)' }}
+        className="bg-white-custom"
       >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Menu</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="flex-column">
