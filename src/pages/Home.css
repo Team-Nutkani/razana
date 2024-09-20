@@ -1,3 +1,7 @@
 .bg-transparent-custom{
     background-color: #0a1e3f75 !important;
 }
+
+.bg-services-custom .fs-1{
+    font-size: 5.5rem !important;
+}

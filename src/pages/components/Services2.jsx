@@ -12,23 +12,23 @@ const Services2 = ({ text, heading, image }) => {
         backgroundRepeat: 'no-repeat !important',
     };
 
-    const data = [
-        {
-            icon: '',
-            title: 'Experience',
-            text: '12',
-        },
-        {
-            icon: '',
-            title: 'Services',
-            text: '50',
-        },
-        {
-            icon: '',
-            title: 'Happy Clients',
-            text: '100+',
-        },
-    ];
+    // const data = [
+    //     {
+    //         icon: '',
+    //         title: 'Experience',
+    //         text: '12',
+    //     },
+    //     {
+    //         icon: '',
+    //         title: 'Services',
+    //         text: '50',
+    //     },
+    //     {
+    //         icon: '',
+    //         title: 'Happy Clients',
+    //         text: '100+',
+    //     },
+    // ];
 
     // Variants for the overall container
     const containerVariants = {
@@ -47,7 +47,7 @@ const Services2 = ({ text, heading, image }) => {
     };
 
     return (
-        <div style={bgStyle} className="my-5 bg-services-custom">
+        <div style={bgStyle} className="my-5 bg-services-custom vh-100 ">
             <Container className="py-5">
                 <Row className="mt-5">
                     <Col xs={12} className="text-white">
@@ -56,13 +56,15 @@ const Services2 = ({ text, heading, image }) => {
                             initial="hidden"
                             animate={inView ? 'visible' : 'hidden'}
                             transition={{ duration: 1, delay: 0.4  }}
+                            className='fs-1 opacity-75 text-center text-uppercase'
                         >
-                            {heading}
+                            Rzana
                         </motion.h2>
                         <motion.p
                             initial="hidden"
                             animate={inView ? 'visible' : 'hidden'}
                             transition={{ duration: 1, delay: 0.4 }}
+                            className='mt-auto'
                         >
                             {text}
                         </motion.p>
@@ -75,7 +77,7 @@ const Services2 = ({ text, heading, image }) => {
                         initial="hidden"
                         animate={inView ? 'visible' : 'hidden'}
                     >
-                        {data.map((cardData, index) => (
+                        {/* {data.map((cardData, index) => (
                             <Col xs={12} md={4} className='mb-3'>
                             <motion.div key={index} variants={cardVariants}>
                                 <Card className="rounded-5 bg-transparent-custom border border-1 shadow-lg">
@@ -87,7 +89,7 @@ const Services2 = ({ text, heading, image }) => {
                                 </Card>
                             </motion.div>
                             </Col>
-                        ))}
+                        ))} */}
                     </motion.div>
                 </Row>
             </Container>

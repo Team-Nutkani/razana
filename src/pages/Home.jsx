@@ -34,7 +34,7 @@ export default function Home() {
     {
       heading: 'Hospitality',
       description: 'At Rzana Luxury Service, we deliver exceptional hospitality...',
-      image: 'assets/img/services-bg.jpg',
+      image: 'assets/img/hospitality.jpg',
     },
     {
       heading: 'Catering',
