@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Container, Row, Button, CardBody, CardTitle, CardText, Image } from 'react-bootstrap';
+import { Card, Col, Container, Row, CardBody, CardTitle, CardText, Image } from 'react-bootstrap';
 import { motion } from 'framer-motion'; // Import Framer Motion
 import { useInView } from 'react-intersection-observer'; // For scroll-triggered animation
 
