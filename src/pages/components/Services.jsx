@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container, Image, Row } from 'react-bootstrap'
+import { Button, Col, Container, Image, Row } from 'react-bootstrap'
 
 const Services = ({ text, heading, image }) => {
     return (
@@ -10,8 +10,9 @@ const Services = ({ text, heading, image }) => {
                         <Image src={image} alt={heading} className='rounded-5 w-100' />
                     </Col>
                     <Col md={6}>
-                        <h2>{heading}</h2>
+                        <h2 className='fs-3'>{heading}</h2>
                         <p>{text}</p>
+                        <Button variant='primary'>Read More</Button>
                     </Col>
                 </Row>
             </Container>
