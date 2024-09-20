@@ -3,6 +3,10 @@ import { motion } from 'framer-motion';
 import NavigationBar from './components/NavigationBar';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
+import Testimonial from './components/Testimonials';
+import Services2 from './components/Services2';
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -43,11 +47,6 @@ export default function Home() {
     {
       heading: 'Parking management',
       description: "Rzana provides advanced parking management with smart gate technology, ensuring efficient, secure, and seamless parking solutions for an enhanced customer experience.",
-      image: 'assets/img/services.jpg'
-    },
-    {
-      heading: 'UMRAH & HOLY SITES SERVICE',
-      description: "Rzana Luxury Service enhances Umrah and Hajj experiences with premium chauffeur and golf car services, offering seamless transportation, expert hospitality, and efficient parking management at holy sites, ensuring a comfortable, respectful, and stress-free pilgrimage journey. REACH YOUR DESTINATION",
       image: 'assets/img/services.jpg'
     },
   ]
@@ -106,8 +105,17 @@ export default function Home() {
         <NavigationBar />
         <Hero />
         {
-          data.map((item, index) => <Services position={index % 2 === 0 ? true : false} text={item.description} heading={item.heading} image={item.image} />)
+          data.map((item, index) => {
+            return (
+              <>
+                {(index % 2 === 0 ) ? <Services text={item.description} heading={item.heading} image={item.image} /> : <Services2 text={item.description} heading={item.heading} image={item.image} />}</>
+            )
+          }
+           )
         }
+        <Testimonial />
+        <ContactSection />
+        <Footer />
       </div>
     </div>
   );

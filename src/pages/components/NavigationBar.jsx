@@ -25,7 +25,7 @@ export default function NavigationBar() {
         className={`fixed-top pb-0 ${scrolled ? 'bg-white-custom shadow' : 'bg-transparent-custom'}`}
         style={{ transition: 'background-color 0.3s ease' }}
       >
-        <Container className="border-bottom border-white pb-3">
+        <Container className={`${scrolled ? '' : 'border-bottom border-white pb-3'}`}>
           <label className="text-white d-flex align-items-center gap-2" onClick={() => setShowOffcanvas(true)}>
             <i className="bi bi-list fs-3"></i> Menu
           </label>

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Col, Container, Image, Row } from 'react-bootstrap'
 
-const Services = ({ position, text, heading, image }) => {
+const Services = ({ text, heading, image }) => {
     return (
         <div className='my-5'>
             <Container>
                 <Row>
-                    <Col md={6} className={position ? 'order-0' : 'order-1'}>
+                    <Col md={6} className={'order-0'}>
                         <Image src={image} alt={heading} className='rounded-5 w-100' />
                     </Col>
                     <Col md={6}>
