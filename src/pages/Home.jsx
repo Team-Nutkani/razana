@@ -69,30 +69,30 @@ export default function Home() {
     };
   }, []);
 
-  // Cursor variants for animation (faster and smoother)
+  // Cursor variants for faster and smoother animation
   const variants = {
     default: {
       x: mousePosition.x - 8,
       y: mousePosition.y - 8,
-      height: 8,  // Larger base cursor size
-      width: 8,
+      height: 10, 
+      width: 10,
       transition: {
-        type: 'tween',  // Instant transition type
-        ease: 'linear',
-        duration: 0.1,  // Fast response
+        type: 'spring',
+        stiffness: 800,
+        damping: 20,
       },
     },
     hover: {
-      x: mousePosition.x - 20,  // Adjust position to account for larger size
+      x: mousePosition.x - 20,
       y: mousePosition.y - 20,
-      height: 40,  // Noticeably larger cursor on hover
+      height: 40,  // Larger size when hovering over interactive elements
       width: 40,
-      backgroundColor: '#ffcc00',  // Add some color to make hover more visible
       transition: {
         type: 'spring',
-        stiffness: 700,  // Higher stiffness for faster response
-        damping: 20,     // Reduces overshooting
+        stiffness: 800,  // Fast response for hover as well
+        damping: 20,
       },
+      backgroundColor: 'transparent',
       mixBlendMode: 'difference',
     },
   };
@@ -119,8 +119,8 @@ export default function Home() {
       />
 
       {/* Main content */}
-      <div onMouseEnter={textEnter} onMouseLeave={textLeave}>
-        <NavigationBar />
+      <div>
+        <NavigationBar setCursorVariant={setCursorVariant} />
         <Hero />
         {
           data.map((item, index) => {
@@ -128,7 +128,7 @@ export default function Home() {
               <div key={index}>
                 {(index % 2 === 0) ?
                   <Services text={item.description} heading={item.heading} image={item.image} />
-                  : <>{index / 1 === 1 ? <Stats /> : <Services2 text={item.description} heading={item.heading} image={item.image} />}</>
+                  : <>{index / 1 === 1 ? <Stats heading={item.heading} description={item.description} /> : <Services2 text={item.description} heading={item.heading} image={item.image} />}</>
                 }
               </div>
             );

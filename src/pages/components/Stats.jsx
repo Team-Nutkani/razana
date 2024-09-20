@@ -10,7 +10,7 @@ const stats = [
   { value: 2, label: 'Offices Around the World' },
 ]
 
-const Stats = () => {
+const Stats = ({ heading, description }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -26,6 +26,10 @@ const Stats = () => {
     >
       <Container>
         <Row className="text-center">
+          <Col xs={12} className='text-white mb-5'>
+            <h2>{heading}</h2>
+            <p>{description}</p>
+          </Col>
           {stats.map((stat, index) => (
             <Col key={index} xs={12} md={6} lg={3} className="mb-4">
               <StatItem value={stat.value} label={stat.label} delay={index * 0.2} inView={inView} />

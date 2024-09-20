@@ -5,7 +5,7 @@ import { Search } from 'lucide-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 
-export default function NavigationBar() {
+export default function NavigationBar({setCursorVariant}) {
   const [scrolled, setScrolled] = useState(false);
   const [showOffcanvas, setShowOffcanvas] = useState(false);
 
@@ -34,6 +34,8 @@ export default function NavigationBar() {
           <motion.label
             className="text-white d-flex align-items-center gap-2"
             onClick={() => setShowOffcanvas(true)}
+            onHoverStart={setCursorVariant("hover")}
+            onHoverEnd={setCursorVariant('default')}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
