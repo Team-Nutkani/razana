@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 import Testimonial from './components/Testimonials';
 import Services2 from './components/Services2';
 
+import './Home.css';
+
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState('default');
@@ -22,7 +24,7 @@ export default function Home() {
     {
       heading: 'Our experience ',
       description: 'Rzana Luxury Service Since 2015, Rzana Luxury Service has been delivering exceptional transportation and golf car services with chauffeur, blending elegance and efficiency to offer a superior, seamless travel experience...',
-      image: 'assets/img/services.jpg'
+      image: 'assets/img/services-bg.jpg'
     },
     {
       heading: 'Our vision',
@@ -32,7 +34,7 @@ export default function Home() {
     {
       heading: 'topic Hospitality',
       description: "At Rzana Luxury Service, we deliver exceptional hospitality, offering personalized, high-end experiences that cater to every client's unique needs with unparalleled attention to detail.",
-      image: 'assets/img/services.jpg'
+      image: 'assets/img/services-bg.jpg'
     },
     {
       heading: 'Catering',
@@ -42,7 +44,7 @@ export default function Home() {
     {
       heading: 'Valet parking',
       description: "Since 2015, Rzana has been Saudi Arabia's first valet service and pioneer in using advanced technology, setting a new standard in luxury and efficiency.",
-      image: 'assets/img/services.jpg'
+      image: 'assets/img/services-bg.jpg'
     },
     {
       heading: 'Parking management',
@@ -108,10 +110,10 @@ export default function Home() {
           data.map((item, index) => {
             return (
               <>
-                {(index % 2 === 0 ) ? <Services text={item.description} heading={item.heading} image={item.image} /> : <Services2 text={item.description} heading={item.heading} image={item.image} />}</>
+                {(index % 2 === 0) ? <Services text={item.description} heading={item.heading} image={item.image} /> : <Services2 text={item.description} heading={item.heading} image={item.image} />}</>
             )
           }
-           )
+          )
         }
         <Testimonial />
         <ContactSection />

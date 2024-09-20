@@ -22,7 +22,7 @@ export default function NavigationBar() {
     <motion.div initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
       <Navbar
         expand="lg"
-        className={`fixed-top pb-0 ${scrolled ? 'bg-white-custom shadow' : 'bg-transparent-custom'}`}
+        className={`fixed-top pb-0 ${scrolled ? 'bg-white-custom shadow' : ''}`}
         style={{ transition: 'background-color 0.3s ease' }}
       >
         <Container className={`${scrolled ? '' : 'border-bottom border-white pb-3'}`}>

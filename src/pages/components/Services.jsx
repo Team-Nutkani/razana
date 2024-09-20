@@ -1,9 +1,25 @@
-import React from 'react'
-import { Button, Col, Container, Image, Row } from 'react-bootstrap'
+import React from 'react';
+import { Button, Col, Container, Image, Row } from 'react-bootstrap';
+import { motion } from 'framer-motion'; // Import Framer Motion
+import { useInView } from 'react-intersection-observer'; // Import Intersection Observer hook
+
+const animationVariants = {
+    hidden: { opacity: 0, y: 50 },  // Start slightly below and hidden
+    visible: { opacity: 1, y: 0 },  // Animate to normal position
+};
 
 const Services = ({ text, heading, image }) => {
+    const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 }); // Detect if component is in view
+
     return (
-        <div className='my-5'>
+        <motion.div
+            ref={ref} // Attach observer to the outer div
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'} // Trigger animation on scroll
+            variants={animationVariants}
+            transition={{ duration: 0.6 }} // Animation duration
+            className='my-5'
+        >
             <Container>
                 <Row>
                     <Col md={6} className={'order-0'}>
@@ -16,8 +32,8 @@ const Services = ({ text, heading, image }) => {
                     </Col>
                 </Row>
             </Container>
-        </div>
-    )
-}
+        </motion.div>
+    );
+};
 
-export default Services
+export default Services;
