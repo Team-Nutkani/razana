@@ -7,6 +7,7 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import Testimonial from './components/Testimonials';
 import Services2 from './components/Services2';
+import Stats from './components/Stats';
 
 import './Home.css';
 
@@ -14,44 +15,45 @@ export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState('default');
 
-
   const data = [
     {
-      heading: 'Transportation and Chauffeur Service ',
-      description: 'zana Luxury Service offers premier chauffeur-driven transportation, blending elegance and efficiency. Our professional drivers and high-end vehicles ensure a sophisticated, seamless, and personalized journey for our esteemed clients.',
-      image: 'assets/img/services.jpg'
+      heading: 'Transportation and Chauffeur Service',
+      description: 'Zana Luxury Service offers premier chauffeur-driven transportation, blending elegance and efficiency...',
+      image: 'assets/img/services.jpg',
     },
     {
-      heading: 'Our experience ',
-      description: 'Rzana Luxury Service Since 2015, Rzana Luxury Service has been delivering exceptional transportation and golf car services with chauffeur, blending elegance and efficiency to offer a superior, seamless travel experience...',
-      image: 'assets/img/services-bg.jpg'
+      heading: 'Our Experience',
+      description: 'Since 2015, Rzana Luxury Service has been delivering exceptional transportation...',
+      image: 'assets/img/services-bg.jpg',
     },
     {
-      heading: 'Our vision',
-      description: 'our vision is to always innovate new and modern strategies and services for our customers in everything that is offered through the company to reach their complete satisfaction in every step of their journey with us.',
-      image: 'assets/img/services.jpg'
+      heading: 'Our Vision',
+      description: 'Our vision is to always innovate new and modern strategies...',
+      image: 'assets/img/services.jpg',
     },
     {
-      heading: 'topic Hospitality',
-      description: "At Rzana Luxury Service, we deliver exceptional hospitality, offering personalized, high-end experiences that cater to every client's unique needs with unparalleled attention to detail.",
-      image: 'assets/img/services-bg.jpg'
+      heading: 'Hospitality',
+      description: 'At Rzana Luxury Service, we deliver exceptional hospitality...',
+      image: 'assets/img/services-bg.jpg',
     },
     {
       heading: 'Catering',
-      description: "Rzana offers top-quality catering with a diverse range of food, including exquisite Saudi cuisine, ensuring a premium dining experience tailored to any occasion.",
-      image: 'assets/img/services.jpg'
+      description: 'Rzana offers top-quality catering with a diverse range of food...',
+      image: 'assets/img/services.jpg',
     },
     {
-      heading: 'Valet parking',
-      description: "Since 2015, Rzana has been Saudi Arabia's first valet service and pioneer in using advanced technology, setting a new standard in luxury and efficiency.",
-      image: 'assets/img/services-bg.jpg'
+      heading: 'Valet Parking',
+      description: 'Rzana has been Saudi Arabia\'s first valet service...',
+      image: 'assets/img/services-bg.jpg',
     },
     {
-      heading: 'Parking management',
-      description: "Rzana provides advanced parking management with smart gate technology, ensuring efficient, secure, and seamless parking solutions for an enhanced customer experience.",
-      image: 'assets/img/services.jpg'
+      heading: 'Parking Management',
+      description: 'Rzana provides advanced parking management with smart gate technology...',
+      image: 'assets/img/services.jpg',
     },
-  ]
+  ];
+
+  // Track mouse position
   useEffect(() => {
     const mouseMove = (e) => {
       setMousePosition({
@@ -67,30 +69,43 @@ export default function Home() {
     };
   }, []);
 
+  // Cursor variants for animation (faster and smoother)
   const variants = {
     default: {
       x: mousePosition.x - 8,
       y: mousePosition.y - 8,
-      height: 5,
-      width: 5,
+      height: 8,  // Larger base cursor size
+      width: 8,
+      transition: {
+        type: 'tween',  // Instant transition type
+        ease: 'linear',
+        duration: 0.1,  // Fast response
+      },
     },
     hover: {
-      height: 16,
-      width: 16,
-      x: mousePosition.x - 5,
-      y: mousePosition.y - 5,
-      backgroundColor: 'transparent',
+      x: mousePosition.x - 20,  // Adjust position to account for larger size
+      y: mousePosition.y - 20,
+      height: 40,  // Noticeably larger cursor on hover
+      width: 40,
+      backgroundColor: '#ffcc00',  // Add some color to make hover more visible
+      transition: {
+        type: 'spring',
+        stiffness: 700,  // Higher stiffness for faster response
+        damping: 20,     // Reduces overshooting
+      },
       mixBlendMode: 'difference',
     },
   };
 
+  // Handle mouse hover events
   const textEnter = () => setCursorVariant('hover');
   const textLeave = () => setCursorVariant('default');
 
   return (
     <div>
+      {/* Custom cursor */}
       <motion.div
-        className=""
+        className="custom-cursor"
         variants={variants}
         animate={cursorVariant}
         style={{
@@ -100,20 +115,24 @@ export default function Home() {
           zIndex: 9999,
           border: '2px solid white',
           backgroundColor: 'transparent',
-          mixBlendMode: 'difference',
         }}
       />
+
+      {/* Main content */}
       <div onMouseEnter={textEnter} onMouseLeave={textLeave}>
         <NavigationBar />
         <Hero />
         {
           data.map((item, index) => {
             return (
-              <>
-                {(index % 2 === 0) ? <Services text={item.description} heading={item.heading} image={item.image} /> : <Services2 text={item.description} heading={item.heading} image={item.image} />}</>
-            )
-          }
-          )
+              <div key={index}>
+                {(index % 2 === 0) ?
+                  <Services text={item.description} heading={item.heading} image={item.image} />
+                  : <>{index / 1 === 1 ? <Stats /> : <Services2 text={item.description} heading={item.heading} image={item.image} />}</>
+                }
+              </div>
+            );
+          })
         }
         <Testimonial />
         <ContactSection />

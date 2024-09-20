@@ -4,7 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
+// Testimonial List Data
 const testimonialList = [
 	{
 		author: {
@@ -35,38 +37,18 @@ const testimonialList = [
 	},
 	{
 		author: {
-			fullName: "jklfdshjkhas h",
+			fullName: "Jklfdshjkhas H",
 			picture: "https://cdn.easyfrontend.com/pictures/users/user22.jpg",
 		},
 		rating: 3.5,
 		description:
 			"Over third given bring lights divide saying. Fowl, all creeping second saw creature isn't gathered likeness shall fruitful saying let.",
 	},
-	{
-		author: {
-			fullName: "Raima Sen",
-			picture: "https://cdn.easyfrontend.com/pictures/users/user4.jpg",
-		},
-		rating: 4,
-		description:
-			"Tree the whales fifth for their whose. Deep From fruitful spirit creature morning, fowl greater said, it first creepeth after.",
-	},
-	{
-		author: {
-			fullName: "Arjun Kapur",
-			picture: "https://cdn.easyfrontend.com/pictures/users/user20.jpg",
-		},
-		rating: 5,
-		description:
-			"Assumenda non repellendus distinctio nihil dicta sapiente, quibusdam maiores, illum at, aliquid blanditiis eligendi qui.",
-	},
 ];
 
+// Rating Component
 const Rating = ({ rating, showLabel, className, ...rest }) => (
-	<p
-		className={classNames("mb-4 ezy__testimonial7-rating", className)}
-		{...rest}
-	>
+	<p className={classNames("mb-4 ezy__testimonial7-rating", className)} {...rest}>
 		<span>
 			{[...Array(5)].map((_, i) => {
 				const index = i + 1;
@@ -93,34 +75,42 @@ Rating.propTypes = {
 	className: PropTypes.string,
 };
 
+// Testimonial Item Component with Animation
 const TestimonialItem = ({ testimonial }) => (
-	<Card className="ezy__testimonial7-item">
-		<Card.Body className="px-lg-4 pt-4 pb-lg-5">
-			<img
-				src={testimonial.author.picture}
-				alt={testimonial.author.fullName}
-				className="img-fluid rounded-circle mb-4 border"
-				width="100"
-			/>
-			<h4 className="ezy__testimonial7-title fs-5 mb-1">
-				{testimonial.author.fullName}
-			</h4>
-			<Rating rating={testimonial.rating} showLabel={false} />
-			<p className="ezy__testimonial7-content mb-0">
-				{testimonial.description}
-			</p>
-		</Card.Body>
-	</Card>
+	<motion.div
+		initial={{ opacity: 0, y: 50 }}
+		animate={{ opacity: 1, y: 0 }}
+		transition={{ duration: 0.6, ease: "easeOut" }}
+	>
+		<Card className="ezy__testimonial7-item">
+			<Card.Body className="px-lg-4 pt-4 pb-lg-5">
+				<img
+					src={testimonial.author.picture}
+					alt={testimonial.author.fullName}
+					className="img-fluid rounded-circle mb-4 border"
+					width="100"
+				/>
+				<h4 className="ezy__testimonial7-title fs-5 mb-1">
+					{testimonial.author.fullName}
+				</h4>
+				<Rating rating={testimonial.rating} showLabel={false} />
+				<p className="ezy__testimonial7-content mb-0">
+					{testimonial.description}
+				</p>
+			</Card.Body>
+		</Card>
+	</motion.div>
 );
 
 TestimonialItem.propTypes = {
 	testimonial: PropTypes.object.isRequired,
 };
 
+// Testimonial List Component with Animation for each card
 const TestimonialList = ({ testimonials, perSlide }) => {
 	const [index, setIndex] = useState(0);
 
-	const handleSelect = (selectedIndex, e) => {
+	const handleSelect = (selectedIndex) => {
 		setIndex(selectedIndex);
 	};
 
@@ -158,6 +148,7 @@ TestimonialList.defaultProps = {
 	perSlide: 1,
 };
 
+// Main Testimonial Component
 const Testimonial = () => {
 	const [windowWidth, setWindowWidth] = useState(0);
 	const [perSlide, setPerSlide] = useState(3);
@@ -182,15 +173,25 @@ const Testimonial = () => {
 			<Container>
 				<Row className="mb-4 mb-md-5">
 					<Col lg={5}>
-						<h2 className="ezy__testimonial7-heading mb-4">
-							Everyone should believe in What Our Client Say.
-						</h2>
+						<motion.h2
+							initial={{ opacity: 0, x: -50 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.8 }}
+							className="ezy__testimonial7-heading mb-4"
+						>
+							Everyone should believe in What Our Clients Say.
+						</motion.h2>
 					</Col>
 					<Col lg={4} className="offset-lg-1">
-						<p className="ezy__testimonial7-sub-heading mb-0">
+						<motion.p
+							initial={{ opacity: 0, x: 50 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.8, delay: 0.2 }}
+							className="ezy__testimonial7-sub-heading mb-0"
+						>
 							It’s easier to reach your savings goals when you have the right
 							savings account. Take a look and find the right one for you!
-						</p>
+						</motion.p>
 					</Col>
 				</Row>
 
@@ -199,6 +200,5 @@ const Testimonial = () => {
 		</section>
 	);
 };
-
 
 export default Testimonial;

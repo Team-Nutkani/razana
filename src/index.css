@@ -2,9 +2,20 @@
     --bs-body-bg: #e5d6d67a;
 }
 
-* {
+/* * {
     cursor: none;
-}
+} */
+
+.custom-cursor {
+    border: 2px solid white;
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    background-color: transparent;
+    mix-blend-mode: difference;
+    transition: all 0.2s ease;
+  }
+  
 
 .logo {
     width: 40px;
