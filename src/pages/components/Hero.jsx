@@ -8,25 +8,25 @@ import { Image } from "react-bootstrap";
 const slidesData = [
     {
         id: 1,
-        backgroundImage: "assets/img/hero.png",
+        backgroundImage: "assets/img/car-parking.png",
         heading: "Slide 1 Heading",
         description: "This is the description for Slide 1"
     },
     {
         id: 2,
-        backgroundImage: "https://picsum.photos/1200/800?random=2",
+        backgroundImage: "assets/img/hospitality.png",
         heading: "Slide 2 Heading",
         description: "This is the description for Slide 2"
     },
     {
         id: 3,
-        backgroundImage: "https://picsum.photos/1200/800?random=3",
+        backgroundImage: "assets/img/catering.png",
         heading: "Slide 3 Heading",
         description: "This is the description for Slide 3"
     },
     {
         id: 4,
-        backgroundImage: "https://picsum.photos/1200/800?random=4",
+        backgroundImage: "assets/img/valet-parking.png",
         heading: "Slide 4 Heading",
         description: "This is the description for Slide 4"
     }
