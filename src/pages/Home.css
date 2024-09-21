@@ -1,12 +1,14 @@
-.bg-transparent-custom{
-    background-color: #0a1e3f75 !important;
+.bg-services-custom {
+    height: 600px;
+    background-position: center !important;
 }
 
-.bg-services-custom .fs-1{
+.bg-services-custom .fs-1 {
     font-size: 5.5rem !important;
 }
-.carousel-indicators [data-bs-target]{
-    height: 15px !important; 
+
+.carousel-indicators [data-bs-target] {
+    height: 15px !important;
     width: 15px !important;
     border-radius: 50%;
 }
