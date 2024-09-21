@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Carousel from 'react-bootstrap/Carousel';
-import { Container, Image } from "react-bootstrap";
+import { Button, Container, Image } from "react-bootstrap";
 
 const slidesData = [
     {
@@ -53,9 +53,10 @@ const Hero = () => {
                 <Carousel.Item key={i}>
                     <Image src={slide.backgroundImage} className="w-100 h-100" alt={`Slide ${i}`} />
                     <Carousel.Caption className="d-flex flex-column w-100 justify-content-center align-items-center">
-                        <Container>
+                        <Container className="px-0 px-lg-5 mt-lg-0 mt-3">
                             <h2 className="fs-1">{slide.heading}</h2>
                             <p className="fs-5 ">{slide.description}</p>
+                            <Button variant="transparent" className="btn-animate f-5 fw-bold bg-transparent rounded-pill px-5 border border-1 py-2">Discover More</Button>
                         </Container>
                     </Carousel.Caption>
                 </Carousel.Item>

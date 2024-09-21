@@ -15,14 +15,23 @@ const Services2 = ({ text, heading, image }) => {
     return (
         <div style={bgStyle} className="my-5 bg-services-custom">
             <Container className="py-5 h-100">
-                <Row className="mt-5 h-100">
+                <Row className="h-100 mt-5">
                     <Col xs={12} className="text-white text-center">
+                    <motion.h2
+                            ref={ref}
+                            initial="hidden"
+                            animate={inView ? 'visible' : 'hidden'}
+                            transition={{ duration: 1, delay: 0.4 }}
+                            className='fs-1 mb-5'
+                        >
+                            Rzana
+                        </motion.h2>
                         <motion.h2
                             ref={ref}
                             initial="hidden"
                             animate={inView ? 'visible' : 'hidden'}
                             transition={{ duration: 1, delay: 0.4 }}
-                            className='fs-2'
+                            className='fs-2 fw-bold pt-5'
                         >
                             {heading}
                         </motion.h2>

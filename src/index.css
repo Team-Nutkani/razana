@@ -2,23 +2,49 @@
   --bs-body-bg: #0000007a;
 }
 
-*, a, .btn {
-  cursor: none !important;
+@font-face {
+  font-family: 'Brown Suger';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../public/assets/fonts/brown-sugar/brown-sugar.ttf');
 }
 
-.custom-cursor {
-  border: 2px solid white;
-  position: fixed;
-  z-index: 9999;
-  pointer-events: none;
-  background-color: transparent;
-  mix-blend-mode: difference;
-  transition: all 0.2s ease;
+* {
+  font-family: 'Brown Suger';
+  letter-spacing: 3px;
 }
+
+/* 
+*, a, .btn {
+  cursor: none !important;
+} */
+
+body {
+  cursor: auto;
+}
+
+@media (max-width: 768px) {
+  body {
+    cursor: none;
+  }
+
+  .custom-cursor {
+    border: 2px solid white;
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    background-color: transparent;
+    mix-blend-mode: difference;
+    transition: all 0.2s ease;
+  }
+}
+
+
+
 
 
 .logo {
-  width: 40px;
+  width: 150px;
 }
 
 #hero {
@@ -108,4 +134,32 @@
     -webkit-animation: zoom 35s infinite;
     animation: zoom 35s infinite;
   }
+}
+
+.btn-animate {
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+}
+
+.btn-animate:hover {
+  background-color: #0A1E3F !important;
+  text-decoration: none;
+  transition: 0.5s;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+
+  box-shadow: 0 0 15px #0A1E3F,
+    0 0 45px #0A1E3F,
+    0 0 75px #0A1E3F;
+}
+
+
+
+
+.glowing-btn:hover {
+  transition: .5s;
+  background-color: #0A1E3F !important;
 }

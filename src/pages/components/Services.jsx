@@ -22,13 +22,13 @@ const Services = ({ text, heading, image }) => {
         >
             <Container>
                 <Row className='align-items-center'>
-                    <Col md={6} className={'order-0 mb-3'}>
+                    <Col lg={6} className={'order-0 mb-3'}>
                         <Image src={image} alt={heading} className='rounded-5 w-100' />
                     </Col>
-                    <Col md={6} className='mb-3'>
-                        <h2 className='fs-1 '>{heading}</h2>
-                        <p className='fs-4'>{text}</p>
-                        <Button variant='primary'>Read More</Button>
+                    <Col lg={6} className='mb-3'>
+                        <h2 className='fs-3 fw-bold'>{heading}</h2>
+                        <p className='fs-5'>{text}</p>
+                        <Button variant='transparent' className='glowing-btn f-5 fw-bold bg-transparent rounded-pill px-5 border border-1 py-2'>Read More</Button>
                     </Col>
                 </Row>
             </Container>

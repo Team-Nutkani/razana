@@ -14,6 +14,24 @@ import './Home.css';
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState('default');
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Function to check the screen size
+  const checkScreenSize = () => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);  // Mobile screen
+    } else {
+      setIsMobile(false); // Desktop screen
+    }
+  };
+
+  useEffect(() => {
+    checkScreenSize(); // Check initial screen size
+    window.addEventListener('resize', checkScreenSize); // Recheck on resize
+
+    // Cleanup the event listener on unmount
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const data = [
     {
@@ -28,7 +46,7 @@ export default function Home() {
     },
     {
       heading: 'Our Vision',
-      description: 'Our vision is to always innovate new and modern strategies...',
+      description: 'Our vision is to always innovate new and modern strategies and services for our customers in everything that is offered through the company to reach their complete satisfaction in every step of their journey with us.',
       image: 'assets/img/services.jpg',
     },
     {
@@ -102,7 +120,7 @@ export default function Home() {
       <motion.div
         className="custom-cursor"
         variants={variants}
-        animate={cursorVariant}
+        animate={!isMobile ? cursorVariant : ''}
         style={{
           position: 'fixed',
           borderRadius: '50%',

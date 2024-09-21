@@ -45,7 +45,7 @@ export default function NavigationBar({setCursorVariant}) {
           {/* Logo */}
           <Navbar.Brand href="#home" className="ms-auto">
             <motion.img
-              src="assets/img/logo.svg"
+              src="assets/img/logo.png"
               alt="logo"
               className="logo"
               initial={{ opacity: 0 }}

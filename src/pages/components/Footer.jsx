@@ -130,7 +130,7 @@ const Footer = () => {
                         variants={columnVariants}
                         className="col-sm-6 col-lg-3 mt-4 mt-lg-0"
                     >
-                        <Image className='logo' src='assets/img/logo.svg' />
+                        <Image className='logo' src='assets/img/logo.png' />
                         <p>Rzana Parking Company</p>
                     </motion.div>
                     <motion.div
