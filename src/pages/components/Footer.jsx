@@ -171,11 +171,12 @@ const Footer = () => {
                             {jobInfo.map((qLink, i) => (
                                 <QuickLinks qLink={qLink} key={i} />
                             ))}
-                            <Nav className="ezy__footer7-social">
-                                {sociaIcons.map((social, i) => (
-                                    <SocialItem social={social} key={i} />
-                                ))}
-                            </Nav>
+
+                        </Nav>
+                        <Nav className="flex-row gap-3 ezy__footer7-quick-links">
+                            {sociaIcons.map((social, i) => (
+                                <SocialItem social={social} key={i} />
+                            ))}
                         </Nav>
                     </motion.div>
                 </Row>

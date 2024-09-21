@@ -34,29 +34,29 @@ export default function Hero() {
                 transition={{ duration: 1.2 }}
             ></motion.div>
 
-            {/* Animate the text and button with staggered effect */}
+            {/* Responsive container for padding on smaller devices */}
             <motion.div
-                className="position-absolute top-50 start-50 translate-middle text-center text-white p-4"
+                className="container position-absolute top-50 start-50 translate-middle text-white p-4"
                 variants={containerVariants} // Applying stagger container variants
                 initial="hidden"
                 animate="visible"
             >
                 <motion.h1
-                    className="display-4 mb-4"
+                    className="display-4 mb-4 text-center text-md-start" // Responsive text alignment
                     variants={textVariants} // Animate the heading text
                 >
                     Welcome to Rzana Luxury Services
                 </motion.h1>
 
                 <motion.p
-                    className="lead"
+                    className="lead text-center text-md-start" // Responsive text alignment
                     variants={textVariants} // Animate the paragraph text
                 >
                     Your premier choice for exceptional hospitality, catering, valet parking, and advanced technologies.
                     Experience chauffeured transportation and expert parking management. Elevate your experience with us.
                 </motion.p>
 
-                <motion.div variants={buttonVariants}> {/* Animate the button */}
+                <motion.div className="text-center text-md-start" variants={buttonVariants}> {/* Animate the button */}
                     <Button variant="light">Discover more</Button>
                 </motion.div>
             </motion.div>

@@ -252,3 +252,27 @@
 	border-color: #86b7fe;
 	box-shadow: none;
 }
+
+#hero h1 {
+    font-size: 3rem;
+}
+
+#hero p {
+    font-size: 1.25rem;
+}
+
+/* Media queries for smaller devices */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2rem; /* Scale down heading on smaller screens */
+    }
+
+    #hero p {
+        font-size: 1rem; /* Scale down paragraph on smaller screens */
+    }
+
+    .container {
+        padding-left: 1rem; /* Extra padding on smaller devices */
+        padding-right: 1rem;
+    }
+}
