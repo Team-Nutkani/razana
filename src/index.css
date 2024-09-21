@@ -42,3 +42,62 @@
     filter: invert(1);
     margin: auto !important;
 }
+.custom-carousel .carousel-indicators {
+    bottom: 20px; /* Adjust positioning if needed */
+  }
+  
+  .custom-carousel .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000; /* Customize indicator color */
+  }
+  
+  .custom-carousel .carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Customize text color */
+  }
+  
+  .custom-carousel .carousel-item {
+    height: 80vh;
+  }
+  
+  .custom-carousel .carousel-item img {
+    object-fit: cover; /* Ensure the image covers the container */
+    height: 100%;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    display: none; /* Hide next/prev icons */
+  }
+
+
+
+  @-webkit-keyframes zoom {
+    from {
+      -webkit-transform: scale(1, 1);
+    }
+    to {
+      -webkit-transform: scale(1.5, 1.5);
+    }
+  }
+  
+  @keyframes zoom {
+    from {
+      transform: scale(1, 1);
+    }
+    to {
+      transform: scale(1.5, 1.5);
+    }
+  }
+  
+  .carousel-inner .carousel-item.active img {
+    transform: scale(1);
+    -webkit-animation: zoom 35s infinite;
+    animation: zoom 35s infinite;
+  }
