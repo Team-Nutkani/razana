@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card, Col, Container, Row, CardBody, CardTitle, CardText, Image } from 'react-bootstrap';
-import { motion } from 'framer-motion'; // Import Framer Motion
-import { useInView } from 'react-intersection-observer'; // For scroll-triggered animation
+import { Col, Container, Row } from 'react-bootstrap';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Services2 = ({ text, heading, image }) => {
 
@@ -12,85 +12,38 @@ const Services2 = ({ text, heading, image }) => {
         backgroundRepeat: 'no-repeat !important',
     };
 
-    // const data = [
-    //     {
-    //         icon: '',
-    //         title: 'Experience',
-    //         text: '12',
-    //     },
-    //     {
-    //         icon: '',
-    //         title: 'Services',
-    //         text: '50',
-    //     },
-    //     {
-    //         icon: '',
-    //         title: 'Happy Clients',
-    //         text: '100+',
-    //     },
-    // ];
-
-    // Variants for the overall container
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2, // Stagger animations for child elements (cards)
-            },
-        },
-    };
-
-    const cardVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-    };
-
     return (
         <div style={bgStyle} className="my-5 bg-services-custom vh-100 ">
-            <Container className="py-5">
-                <Row className="mt-5">
-                    <Col xs={12} className="text-white">
-                        <motion.h2
-                            ref={ref}
-                            initial="hidden"
-                            animate={inView ? 'visible' : 'hidden'}
-                            transition={{ duration: 1, delay: 0.4  }}
-                            className='fs-1 opacity-75 text-center text-uppercase'
-                        >
-                            Rzana
-                        </motion.h2>
+            <Container className="py-5 h-100">
+                <Row className="mt-5 h-100">
+                    <motion.h2
+                        ref={ref}
+                        initial="hidden"
+                        animate={inView ? 'visible' : 'hidden'}
+                        transition={{ duration: 1, delay: 0.4 }}
+                        className='fs-1 opacity-75 text-white text-center text-uppercase'
+                    >
+                        Rzana
+                    </motion.h2>
+                    <Col xs={12} md={8} lg={6} className="text-white d-flex flex-column mt-auto justify-content-start">
+                    <motion.h2
+                        ref={ref}
+                        initial="hidden"
+                        animate={inView ? 'visible' : 'hidden'}
+                        transition={{ duration: 1, delay: 0.4 }}
+                        className='fs-2'
+                    >
+                        {heading}
+                    </motion.h2>
                         <motion.p
                             initial="hidden"
                             animate={inView ? 'visible' : 'hidden'}
                             transition={{ duration: 1, delay: 0.4 }}
-                            className='mt-auto'
+                            className='fs-5'
                         >
                             {text}
                         </motion.p>
                     </Col>
-
-                    {/* Card animations */}
-                    <motion.div
-                        className="row"
-                        variants={containerVariants}
-                        initial="hidden"
-                        animate={inView ? 'visible' : 'hidden'}
-                    >
-                        {/* {data.map((cardData, index) => (
-                            <Col xs={12} md={4} className='mb-3'>
-                            <motion.div key={index} variants={cardVariants}>
-                                <Card className="rounded-5 bg-transparent-custom border border-1 shadow-lg">
-                                    <CardBody className="text-center text-white">
-                                        <Image className="w-50 mx-auto" src={cardData.icon} />
-                                        <CardTitle className="fs-3">{cardData.title}</CardTitle>
-                                        <CardText className="fs-4">{cardData.text}+</CardText>
-                                    </CardBody>
-                                </Card>
-                            </motion.div>
-                            </Col>
-                        ))} */}
-                    </motion.div>
                 </Row>
             </Container>
         </div>

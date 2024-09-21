@@ -2,8 +2,8 @@
     --bs-body-bg: #e5d6d67a;
 }
 
-/* * {
-    cursor: none;
+/* *, a, .btn {
+    cursor: none !important;
 } */
 
 .custom-cursor {

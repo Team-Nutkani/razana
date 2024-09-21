@@ -18,8 +18,8 @@ export default function Home() {
   const data = [
     {
       heading: 'Transportation and Chauffeur Service',
-      description: 'Zana Luxury Service offers premier chauffeur-driven transportation, blending elegance and efficiency...',
-      image: 'assets/img/services.jpg',
+      description: "Welcome to Rzana Luxury Service, a company that offers a variety of luxury services including chauffeur-driven transportation, valet parking, catering, and parking management. The brochure highlights the company's commitment to providing exceptional service and a sophisticated experience for its clients.",
+      image: 'assets/img/services/chauffeur.png',
     },
     {
       heading: 'Our Experience',
@@ -33,23 +33,22 @@ export default function Home() {
     },
     {
       heading: 'Hospitality',
-      description: 'At Rzana Luxury Service, we deliver exceptional hospitality...',
-      image: 'assets/img/hospitality.jpg',
+      description: "At Rzana Luxury Service, we deliver exceptional hospitality, offering personalized, high-end experiences that cater to every client's unique needs with unparalleled attention to detail.",
+      image: 'assets/img/services/hospitality.png',
     },
     {
       heading: 'Catering',
-      description: 'Rzana offers top-quality catering with a diverse range of food...',
-      image: 'assets/img/services.jpg',
+      description: "Welcome to Rzana Luxury Service, a company that offers a variety of luxury services including chauffeur-driven transportation, valet parking, catering, and parking management. The brochure highlights the company's commitment to providing exceptional service and a sophisticated experience for its clients.",
+      image: 'assets/img/services/catering.png',
     },
     {
       heading: 'Valet Parking',
-      description: 'Rzana has been Saudi Arabia\'s first valet service...',
-      image: 'assets/img/services-bg.jpg',
+      description: "Since 2015, Rzana has been Saudi Arabia's first valet service and pioneer in using advanced technology, setting a new standard in luxury and efficiency.", image: 'assets/img/valet-parking.png',
     },
     {
       heading: 'Parking Management',
-      description: 'Rzana provides advanced parking management with smart gate technology...',
-      image: 'assets/img/services.jpg',
+      description: "Since 2015, Rzana has been Saudi Arabia's first valet service and pioneer in using advanced technology, setting a new standard in luxury and efficiency.", image: 'assets/img/valet-parking.png',
+      image: 'assets/img/services/parking.png',
     },
   ];
 
@@ -74,22 +73,22 @@ export default function Home() {
     default: {
       x: mousePosition.x - 8,
       y: mousePosition.y - 8,
-      height: 10, 
+      height: 10,
       width: 10,
       transition: {
         type: 'spring',
-        stiffness: 800,
-        damping: 20,
+        stiffness: 80000,
+        damping: 2000,
       },
     },
     hover: {
       x: mousePosition.x - 20,
       y: mousePosition.y - 20,
-      height: 40,  // Larger size when hovering over interactive elements
+      height: 40,
       width: 40,
       transition: {
         type: 'spring',
-        stiffness: 800,  // Fast response for hover as well
+        stiffness: 800,
         damping: 20,
       },
       backgroundColor: 'transparent',

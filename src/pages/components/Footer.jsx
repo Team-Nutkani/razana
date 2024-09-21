@@ -184,7 +184,7 @@ const Footer = () => {
                     <Col lg={8}>
 
                         <div className="mb-3 mb-lg-0 opacity-50 text-center text-lg-start ezy__footer7-copyright">
-                            <span>Copyright &copy; Rzana, All rights reserved</span>
+                            <span>Copyright &copy; 2024 Rzana, All rights reserved</span>
                         </div>
                     </Col>
                     <Col lg={4}>

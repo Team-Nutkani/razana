@@ -1,34 +1,34 @@
 import React, { useState } from "react";
 
-import HeroSlider, { Slide, Nav } from "hero-slider";
-import { motion } from "framer-motion"; // Import framer-motion
+import { motion } from "framer-motion";
 import Carousel from 'react-bootstrap/Carousel';
-import { Image } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
 // Placeholder images with headings and descriptions
+
 const slidesData = [
     {
         id: 1,
         backgroundImage: "assets/img/car-parking.png",
-        heading: "Slide 1 Heading",
-        description: "This is the description for Slide 1"
+        heading: "Welcome to Rzana Luxury Service",
+        description: "Welcome to Rzana Luxury Service, a company that offers a variety of luxury services including chauffeur-driven transportation, valet parking, catering, and parking management. The brochure highlights the company's commitment to providing exceptional service and a sophisticated experience for its clients."
     },
     {
         id: 2,
         backgroundImage: "assets/img/hospitality.png",
-        heading: "Slide 2 Heading",
-        description: "This is the description for Slide 2"
+        heading: "Hospitality",
+        description: "At Rzana Luxury Service, we deliver exceptional hospitality, offering personalized, high-end experiences that cater to every client's unique needs with unparalleled attention to detail."
     },
     {
         id: 3,
         backgroundImage: "assets/img/catering.png",
-        heading: "Slide 3 Heading",
-        description: "This is the description for Slide 3"
+        heading: "Catering",
+        description: "Rzana offers top-quality catering with a diverse range of food, including exquisite Saudi cuisine, ensuring a premium dining experience tailored to any occasion."
     },
     {
         id: 4,
         backgroundImage: "assets/img/valet-parking.png",
-        heading: "Slide 4 Heading",
-        description: "This is the description for Slide 4"
+        heading: "Valet Parking",
+        description: "Since 2015, Rzana has been Saudi Arabia's first valet service and pioneer in using advanced technology, setting a new standard in luxury and efficiency."
     }
 ];
 
@@ -44,23 +44,25 @@ const Hero = () => {
 
     return (
         <Carousel
-        activeIndex={index}
-        onSelect={handleSelect}
-        controls={false}  // Hide next/prev icons
-        indicators={true} // Enable indicators
-        interval={2000}   // Add 2-second interval for sliding
-        className="custom-carousel"
-      >
-        {slidesData?.map((slide, i) => (
-          <Carousel.Item key={i} style={{ height: '80vh' }}>
-            <Image src={slide.backgroundImage} className="w-100 h-100" alt={`Slide ${i}`} />
-            <Carousel.Caption className="d-flex flex-column justify-content-center align-items-center">
-              <h3>{slide.heading}</h3>
-              <p>{slide.description}</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+            activeIndex={index}
+            onSelect={handleSelect}
+            controls={false}
+            indicators={true}
+            interval={2000}
+            className="custom-carousel"
+        >
+            {slidesData?.map((slide, i) => (
+                <Carousel.Item key={i}>
+                    <Image src={slide.backgroundImage} className="w-100 h-100" alt={`Slide ${i}`} />
+                    <Carousel.Caption className="d-flex flex-column w-100 justify-content-center align-items-center">
+                        <Container>
+                            <h2 className="fs-1">{slide.heading}</h2>
+                            <p className="fs-5 ">{slide.description}</p>
+                        </Container>
+                    </Carousel.Caption>
+                </Carousel.Item>
+            ))}
+        </Carousel>
     );
 };
 

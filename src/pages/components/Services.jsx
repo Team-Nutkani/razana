@@ -21,13 +21,13 @@ const Services = ({ text, heading, image }) => {
             className='my-5'
         >
             <Container>
-                <Row>
+                <Row className='align-items-center'>
                     <Col md={6} className={'order-0'}>
                         <Image src={image} alt={heading} className='rounded-5 w-100' />
                     </Col>
                     <Col md={6}>
-                        <h2 className='fs-3'>{heading}</h2>
-                        <p>{text}</p>
+                        <h2 className='fs-1 '>{heading}</h2>
+                        <p className='fs-4'>{text}</p>
                         <Button variant='primary'>Read More</Button>
                     </Col>
                 </Row>

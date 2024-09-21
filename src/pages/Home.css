@@ -5,3 +5,8 @@
 .bg-services-custom .fs-1{
     font-size: 5.5rem !important;
 }
+.carousel-indicators [data-bs-target]{
+    height: 15px !important; 
+    width: 15px !important;
+    border-radius: 50%;
+}
