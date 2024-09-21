@@ -43,16 +43,17 @@ export default function Home() {
     },
     {
       heading: 'Valet Parking',
-      description: "Since 2015, Rzana has been Saudi Arabia's first valet service and pioneer in using advanced technology, setting a new standard in luxury and efficiency.", image: 'assets/img/valet-parking.png',
+      description: "Since 2015, Rzana has been Saudi Arabia's first valet service and pioneer in using advanced technology, setting a new standard in luxury and efficiency.",
+      image: 'assets/img/valet-parking.png',
     },
     {
       heading: 'Parking Management',
-      description: "Since 2015, Rzana has been Saudi Arabia's first valet service and pioneer in using advanced technology, setting a new standard in luxury and efficiency.", image: 'assets/img/valet-parking.png',
+      description: "Since 2015, Rzana has been Saudi Arabia's first valet service and pioneer in using advanced technology, setting a new standard in luxury and efficiency.",
       image: 'assets/img/services/parking.png',
     },
   ];
 
-  // Track mouse position
+
   useEffect(() => {
     const mouseMove = (e) => {
       setMousePosition({
@@ -68,7 +69,6 @@ export default function Home() {
     };
   }, []);
 
-  // Cursor variants for faster and smoother animation
   const variants = {
     default: {
       x: mousePosition.x - 8,
@@ -95,10 +95,6 @@ export default function Home() {
       mixBlendMode: 'difference',
     },
   };
-
-  // Handle mouse hover events
-  const textEnter = () => setCursorVariant('hover');
-  const textLeave = () => setCursorVariant('default');
 
   return (
     <div>

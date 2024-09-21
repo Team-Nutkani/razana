@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
-import { motion } from "framer-motion";
 import Carousel from 'react-bootstrap/Carousel';
 import { Container, Image } from "react-bootstrap";
-// Placeholder images with headings and descriptions
 
 const slidesData = [
     {
@@ -66,26 +64,5 @@ const Hero = () => {
     );
 };
 
-// Inline styles for the text content
-const styles = {
-    content: {
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        color: "white",
-        textAlign: "center",
-        backgroundColor: "rgba(0, 0, 0, 0.5)", // Add some background for better visibility
-        padding: "20px",
-        borderRadius: "8px"
-    },
-    heading: {
-        fontSize: "2.5rem",
-        marginBottom: "1rem"
-    },
-    description: {
-        fontSize: "1.25rem"
-    }
-};
 
 export default Hero;
