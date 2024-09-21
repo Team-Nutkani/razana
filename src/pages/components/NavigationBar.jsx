@@ -39,7 +39,7 @@ export default function NavigationBar({setCursorVariant}) {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <i className="bi bi-list fs-3"></i> Menu
+            <i className="bi bi-list fs-3"></i>
           </motion.label>
 
           {/* Logo */}

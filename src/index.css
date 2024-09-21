@@ -1,103 +1,111 @@
 :root {
-    --bs-body-bg: #e5d6d67a;
+  --bs-body-bg: #0000007a;
 }
 
 *, a, .btn {
-    cursor: none !important;
+  cursor: none !important;
 }
 
 .custom-cursor {
-    border: 2px solid white;
-    position: fixed;
-    z-index: 9999;
-    pointer-events: none;
-    background-color: transparent;
-    mix-blend-mode: difference;
-    transition: all 0.2s ease;
-  }
-  
+  border: 2px solid white;
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  background-color: transparent;
+  mix-blend-mode: difference;
+  transition: all 0.2s ease;
+}
+
 
 .logo {
-    width: 40px;
+  width: 40px;
 }
 
 #hero {
-    background-image: url(../public/assets/img/hero.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    background-position: center;
+  background-image: url(../public/assets/img/hero.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  background-position: center;
 }
 
 .bg-transparent-cutom {
-    background-color: rgba(0, 0, 0, 0.153);
+  background-color: rgba(0, 0, 0, 0.153);
 }
 
 .bg-white-custom {
-    background-color: rgba(0, 0, 0, 0.558) !important;
-    backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.558) !important;
+  backdrop-filter: blur(5px);
 }
 
 .offcanvas-header .btn-close {
-    filter: invert(1);
-    margin: auto !important;
+  filter: invert(1);
+  margin: auto !important;
 }
+
 .custom-carousel .carousel-indicators {
-    bottom: 20px; /* Adjust positioning if needed */
-  }
-  
-  .custom-carousel .carousel-indicators li {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #000; /* Customize indicator color */
-  }
-  
-  .custom-carousel .carousel-caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white; /* Customize text color */
-  }
-  
-  .custom-carousel .carousel-item {
-    height: 80vh;
-  }
-  
-  .custom-carousel .carousel-item img {
-    object-fit: cover; /* Ensure the image covers the container */
-    height: 100%;
-  }
-  
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    display: none; /* Hide next/prev icons */
-  }
+  bottom: 20px;
+  /* Adjust positioning if needed */
+}
+
+.custom-carousel .carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #000;
+  /* Customize indicator color */
+}
+
+.custom-carousel .carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  /* Customize text color */
+}
+
+.custom-carousel .carousel-item {
+  height: 80vh;
+}
+
+.custom-carousel .carousel-item img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: none;
+}
 
 
 
-  @-webkit-keyframes zoom {
-    from {
-      -webkit-transform: scale(1, 1);
-    }
-    to {
-      -webkit-transform: scale(1.5, 1.5);
-    }
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(1, 1);
   }
-  
-  @keyframes zoom {
-    from {
-      transform: scale(1, 1);
-    }
-    to {
-      transform: scale(1.5, 1.5);
-    }
+
+  to {
+    -webkit-transform: scale(1.5, 1.5);
   }
-  
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1, 1);
+  }
+
+  to {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+@media (min-width:768px) {
   .carousel-inner .carousel-item.active img {
     transform: scale(1);
     -webkit-animation: zoom 35s infinite;
     animation: zoom 35s infinite;
   }
+}
