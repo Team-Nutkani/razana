@@ -131,8 +131,8 @@ body {
 @media (min-width:768px) {
   .carousel-inner .carousel-item.active img {
     transform: scale(1);
-    -webkit-animation: zoom 35s infinite;
-    animation: zoom 35s infinite;
+    -webkit-animation: zoom 80s infinite;
+    animation: zoom 80s infinite;
   }
 }
 
