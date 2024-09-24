@@ -1,38 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import NavigationBar from './components/NavigationBar';
+import React from 'react';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import ContactSection from './components/ContactSection';
-import Footer from './components/Footer';
 import Testimonial from './components/Testimonials';
 import Services2 from './components/Services2';
 import Stats from './components/Stats';
-
+import ContactSection from './components/ContactSection';
 import './Home.css';
 
 export default function Home() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [cursorVariant, setCursorVariant] = useState('default');
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Function to check the screen size
-  const checkScreenSize = () => {
-    if (window.innerWidth <= 768) {
-      setIsMobile(true);  // Mobile screen
-    } else {
-      setIsMobile(false); // Desktop screen
-    }
-  };
-
-  useEffect(() => {
-    checkScreenSize(); // Check initial screen size
-    window.addEventListener('resize', checkScreenSize); // Recheck on resize
-
-    // Cleanup the event listener on unmount
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
-
   const data = [
     {
       heading: 'Transportation and Chauffeur Service',
@@ -71,86 +46,23 @@ export default function Home() {
     },
   ];
 
-
-  useEffect(() => {
-    const mouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-
-    window.addEventListener('mousemove', mouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', mouseMove);
-    };
-  }, []);
-
-  const variants = {
-    default: {
-      x: mousePosition.x - 8,
-      y: mousePosition.y - 8,
-      height: 10,
-      width: 10,
-      transition: {
-        type: 'spring',
-        stiffness: 80000,
-        damping: 2000,
-      },
-    },
-    hover: {
-      x: mousePosition.x - 20,
-      y: mousePosition.y - 20,
-      height: 40,
-      width: 40,
-      transition: {
-        type: 'spring',
-        stiffness: 800,
-        damping: 20,
-      },
-      backgroundColor: 'transparent',
-      mixBlendMode: 'difference',
-    },
-  };
-
   return (
     <div>
-      {/* Custom cursor */}
-      <motion.div
-        className="custom-cursor"
-        variants={variants}
-        animate={!isMobile ? cursorVariant : ''}
-        style={{
-          position: 'fixed',
-          borderRadius: '50%',
-          pointerEvents: 'none',
-          zIndex: 9999,
-          border: '2px solid white',
-          backgroundColor: 'transparent',
-        }}
-      />
-
-      {/* Main content */}
-      <div>
-        <NavigationBar setCursorVariant={setCursorVariant} />
-        <Hero />
-        {
-          data.map((item, index) => {
-            return (
-              <div key={index}>
-                {(index % 2 === 0) ?
-                  <Services text={item.description} heading={item.heading} image={item.image} />
-                  : <>{index / 1 === 1 ? <Stats heading={item.heading} description={item.description} /> : <Services2 text={item.description} heading={item.heading} image={item.image} />}</>
-                }
-              </div>
-            );
-          })
-        }
-        <Testimonial />
-        <ContactSection />
-        <Footer />
-      </div>
+      <Hero />
+      {
+        data.map((item, index) => {
+          return (
+            <div key={index}>
+              {(index % 2 === 0) ?
+                <Services text={item.description} heading={item.heading} image={item.image} />
+                : <>{index / 1 === 1 ? <Stats heading={item.heading} description={item.description} /> : <Services2 text={item.description} heading={item.heading} image={item.image} />}</>
+              }
+            </div>
+          );
+        })
+      }
+      <Testimonial />
+      <ContactSection />
     </div>
   );
 }

@@ -92,7 +92,7 @@ export default function NavigationBar({setCursorVariant}) {
                     transition={{ delay: index * 0.1 }}
                   >
                     <Link
-                      to={`#${item.toLowerCase()}`}
+                      to={`/${item.toLowerCase() === "home" ? '' : item.toLowerCase() }`}
                       className="text-white fs-3 text-decoration-none mb-4"
                     >
                       {item}
