@@ -5,6 +5,13 @@ import Testimonial from './components/Testimonials';
 import Services2 from './components/Services2';
 import Stats from './components/Stats';
 import ContactSection from './components/ContactSection';
+import JourneyToDiscovery from './components/JourneyToDiscovery';
+import PowerhouseSection from './components/PowerhouseSection';
+import BrandExperience from './components/BrandExperience';
+import InternationalEvents from './components/InternationalEvents';
+import CeremoniesShows from './components/CeremoniesShows';
+import Graph from './components/Graph';
+
 import './Home.css';
 
 export default function Home() {
@@ -49,7 +56,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      {
+      {/* {
         data.map((item, index) => {
           return (
             <div key={index}>
@@ -60,9 +67,13 @@ export default function Home() {
             </div>
           );
         })
-      }
-      <Testimonial />
-      <ContactSection />
+      } */}
+      <JourneyToDiscovery />
+      <PowerhouseSection />
+      <BrandExperience />
+      <InternationalEvents />
+      <CeremoniesShows />
+      <Graph />
     </div>
   );
 }

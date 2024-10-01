@@ -1,14 +1,34 @@
-.bg-services-custom {
-    height: 600px;
-    background-position: center !important;
-}
-
-.bg-services-custom .fs-1 {
-    font-size: 5.5rem !important;
-}
-
-.carousel-indicators [data-bs-target] {
-    height: 15px !important;
-    width: 15px !important;
-    border-radius: 50%;
-}
+.bg-black {
+    background-color: #000000;
+  }
+  
+  .text-orange {
+    color: #FFA500;
+  }
+  
+  .graph-container {
+    width: 100%;
+    height: 100px;
+    position: relative;
+  }
+  
+  .graph-svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .graph-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 2s ease-in-out;
+  }
+  
+  .graph-svg.animate .graph-path {
+    stroke-dashoffset: 0;
+  }
+  
+  @media (max-width: 992px) {
+    .graph-container {
+      height: 80px;
+    }
+  }
